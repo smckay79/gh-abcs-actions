@@ -2,11 +2,12 @@ name: 01-1. GitHub Actions Demo
 on: 
   workflow_dispatch:
   workflow_call:
+  
   push:
     branches:
-    - main
-    paths:
-     - 'labs/**'
+      - main
+    #paths:
+    #- 'labs/**'
 
 jobs:
   Explore-GitHub-Actions:
@@ -25,7 +26,7 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - name: Adding markdown
         run: echo "### Hello world! :rocket:" >> "$GITHUB_STEP_SUMMARY"
-# This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
+      # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
       - name: Hello world
         uses: actions/hello-world-javascript-action@v1
         with:
